@@ -9,23 +9,27 @@ body{
 }
 
 .content{
-    
+    margin: 0px auto;
+    width: 70%;
 }
 
 header{
     background-color: white;
     border-bottom: 4px solid #666;
     font-family: Georgia, 'Times New Roman', Times, serif;   
-    margin: 0px;
     height: 72px;
     text-align: center;
 }
 
+.headWrap{
+    margin: 0 auto;
+    width: 70%;
+}
 
 #name{
     background-color: #4aaaa5;
     color: #ffffff;
-    margin: 0px 40px;
+    margin: 0px;
     padding: 12px;
     height: 68px;
     float: left;
