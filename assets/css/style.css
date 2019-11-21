@@ -3,51 +3,64 @@
 }
 
 body{
-    background-color:#ffffff;
+    background-color:blue;
     border-color: #dddddd;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.content{
-    margin: 0px auto;
-    width: 70%;
+    height: 100%;
+    margin: 0;
 }
 
 header{
     background-color: white;
-    border-bottom: 4px solid #666;
+    border-bottom: 2px solid #666;
     font-family: Georgia, 'Times New Roman', Times, serif;   
     height: 72px;
+    width: 100%;
     text-align: center;
 }
 
 .headWrap{
-    margin: 0 auto;
-    width: 70%;
+    margin: 0px auto;
+    width: 70%; 
 }
 
 #name{
     background-color: #4aaaa5;
     color: #ffffff;
-    margin: 0px;
+    margin: 0px auto;
     padding: 12px;
-    height: 68px;
+    height: 70px;
     float: left;
 }
 
 #navLink{
     color: #666666;
     width: 100px;
-    margin-top: 16px;
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 6px;
     float: right;
 }
 #navLink:hover{
     color: #cccccc;
     background-color: #666666;
+    height: 32px;
 }
-    
+
+.content{
+    margin: 0px auto 90px;
+    width: 70%;
+    background-color: #fff;
+    padding: 24px;
+}
+
+h2{
+    color: #4aaaa5;
+}
+
+
 footer{
     background-color: #666666;
     border-top: 8px solid #4aaaa5;
-    height: 40px;
+    height: 72px;
 }
