@@ -14,7 +14,7 @@ header{
     background-color: white;
     border-bottom: 2px solid #666;
     font-family: Georgia, 'Times New Roman', Times, serif;   
-    height: 72px;
+    height: 73px;
     width: 100%;
     text-align: center;
 }
@@ -40,6 +40,7 @@ header{
     margin-top: 24px;
     padding-top: 6px;
     float: right;
+    border-right: 1px solid #666666;
 }
 #navLink:hover{
     color: #cccccc;
@@ -56,6 +57,27 @@ header{
 
 h2{
     color: #4aaaa5;
+}
+
+.projects{
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    float: left;
+}
+
+.projectBox{
+    width: 24px;
+}
+
+
+
+.projectName{
+    background-color: #4aaaa5;
+    height: 18px;
+    width: 100%;
+    position: relative;
+    top: -80px;
 }
 
 
