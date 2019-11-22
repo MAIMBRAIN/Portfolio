@@ -37,7 +37,7 @@ header{
     float: left;
 }
 
-#navLink{
+.navLink{
     color: #666666;
     width: 100px;
     text-align: center;
@@ -46,7 +46,7 @@ header{
     float: right;
     border-right: 1px solid #666666;
 }
-#navLink:hover{
+.navLink:hover{
     color: #cccccc;
     background-color: #666666;
     height: 32px;
