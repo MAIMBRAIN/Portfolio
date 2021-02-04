@@ -1,0 +1,26 @@
+{
+  "name": "responsive-portfolio",
+  "version": "1.0.0",
+  "description": "A portfolio of projects by Avery Stahl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MAIMBRAIN/Responsive-Portfolio.git"
+  },
+  "author": "Avery Stahl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MAIMBRAIN/Responsive-Portfolio/issues"
+  },
+  "homepage": "https://github.com/MAIMBRAIN/Responsive-Portfolio#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.3",
+    "sequelize-cli": "^5.5.1"
+  }
+}
