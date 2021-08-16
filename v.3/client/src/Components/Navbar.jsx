@@ -39,7 +39,8 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "36px",
   },
   listText: {
-    color: "#ECF4F9"
+    color: "#ECF4F9",
+    fontSize: "20px"
   },
   listIcon: {
     color: "#ECF4F9"
@@ -54,6 +55,10 @@ const useStyles = makeStyles((theme) => ({
 
 // Main export
 function Navbar (props) {
+  
+  
+  const { history } = props;
+  
   // Use imported inline styling
   const classes = useStyles();
 
@@ -78,31 +83,31 @@ function Navbar (props) {
     {
       text: "About",
       icon: <AccountBox/>,
-      url: ""
+      urlClick: () => history.push("/")
     },
     {
       text: "Projects",
       icon: <BuildIcon/>,
-      url: ""
+      urlClick: () => history.push("/projects")
     },
     {
       text: "Blog",
       icon: <BookIcon/>,
-      url: ""
+      urlClick: () => history.push("/blog")
     },
     {
       text: "Contact",
       icon: <ForumIcon/>,
-      url: ""
+      urlClick: () => history.push("/contact")
     },
   ]
 
   const drawer = (
     <List className={classes.listStyle}>
       {itemList.map((item, index) => {
-        const { text, icon } = item;
+        const { text, icon, urlClick } = item;
         return(
-          <ListItem className={classes.listItems} button key={text} >
+          <ListItem button className={classes.listItems} key={text} onClick={urlClick}>
             <ListItemIcon className={classes.listIcon}>{icon}</ListItemIcon>
             <ListItemText className={classes.listText} primary={text} />
           </ListItem>
