@@ -18,17 +18,17 @@ import Appbar from "@material-ui/core/AppBar";
 // MUI Styling
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    display: 'flex',
   },
   navStyle: {
-    backgroundColor: "#303030"
+    backgroundColor: "#303030",
   },
   menuButton: {
     marginRight: theme.spacing(2),
   },
   drawer: {
     width: "240px",
-    backgroundColor: "#7A2626"
+    backgroundColor: "#7A2626",
   },
   listStyle: {
     marginTop: "auto",
@@ -49,14 +49,15 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     marginRight: theme.spacing(2),
     padding: "8px",
-    color: "#ECF4F9"
+    color: "#ECF4F9",
+    flexWrap: 'wrap'
   },
 }));
 
 // Main export
 function Navbar (props) {
   
-  
+  // Utilize RRD history to display correct component with url
   const { history } = props;
   
   // Use imported inline styling
