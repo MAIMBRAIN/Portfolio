@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 
 import Drawer from "@material-ui/core/Drawer";
-import { Hidden } from "@material-ui/core";
+import { Divider, Hidden } from "@material-ui/core";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -27,10 +27,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   drawer: {
-    width: "240px",
+    width: "15.4%",
     backgroundColor: "#7A2626",
   },
-  listStyle: {
+  divider: {
     marginTop: "auto",
     marginBottom: "auto"
   },
@@ -40,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
   },
   listText: {
     color: "#ECF4F9",
-    fontSize: "20px"
   },
   listIcon: {
     color: "#ECF4F9"
@@ -50,8 +49,13 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
     padding: "8px",
     color: "#ECF4F9",
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    fontSize: '2.1vmax',
   },
+  drawerTitle: {
+    align:'center',
+    color: "blue"
+  }
 }));
 
 // Main export
@@ -104,17 +108,24 @@ function Navbar (props) {
   ]
 
   const drawer = (
-    <List className={classes.listStyle}>
-      {itemList.map((item, index) => {
-        const { text, icon, urlClick } = item;
-        return(
-          <ListItem button className={classes.listItems} key={text} onClick={urlClick}>
-            <ListItemIcon className={classes.listIcon}>{icon}</ListItemIcon>
-            <ListItemText className={classes.listText} primary={text} />
-          </ListItem>
-        )
-      })}
-    </List>
+    <div className={classes.divider}>
+      <Typography className={classes.drawerTitle}>
+        Avery Stahl
+        \n Full Stack Web Developer
+      </Typography>
+      <Divider className={classes.divider}/>
+      <List >
+        {itemList.map((item, index) => {
+          const { text, icon, urlClick } = item;
+          return(
+            <ListItem button className={classes.listItems} key={text} onClick={urlClick}>
+              <ListItemIcon className={classes.listIcon}>{icon}</ListItemIcon>
+              <ListItemText className={classes.listText} primary={text} />
+            </ListItem>
+          )
+        })}
+      </List>
+    </div>
   );
 
   return (
