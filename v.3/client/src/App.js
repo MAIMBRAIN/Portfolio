@@ -10,9 +10,12 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   container: {
-    marginLeft:"8px",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: "256px;"
+    [theme.breakpoints.up('md')]: {
+      marginTop:"2rem",
+      marginLeft:"22rem",
+    },
+    [theme.breakpoints.down("sm")]: {
+      margin:"2rem"
     }
   }
 }))

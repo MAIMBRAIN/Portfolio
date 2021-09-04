@@ -1,30 +1,26 @@
 import React from "react";
-import { Avatar, Card, CardActionArea, CardMedia, Divider, makeStyles, Typography } from '@material-ui/core';
+import { CardMedia, Divider, makeStyles, Typography } from '@material-ui/core';
 import myPic from "../../Images/MyPic.jpg"
 
 const useStyles = makeStyles(theme => ({
   container: {
-    marginTop: "24px",
-    marginRight: "12px",
-    flexWrap: "wrap",
-    [theme.breakpoints.up("sm")]: {
-      display: 'flex',
-      flexWrap: "nowrap"
-    },
+    // [theme.breakpoints.up('md')]: {
+    //   marginTop:"2rem",
+    //   marginLeft:"22rem",
+    // },
+    // [theme.breakpoints.down("sm")]: {
+    //   margin:"2rem"
+    // }
   },
   content:{
-    fontSize: "20px",
-    marginRight: "12px",
-    marginBottom: "24px"
+    fontSize: "1.25rem",
   },
   divider:{
-    marginTop:"16px",
-    marginBottom: "16px"
+    margin: "1.1rem"
   },
   pic: {
-    width: "100%",
-    height: "auto",
-    display: "block"
+    marginRight: "1.3rem",
+    width: "25%",
   }
 }))
 
@@ -33,6 +29,7 @@ function About () {
     const classes = useStyles();
     return(
         <div className={classes.container}>
+          <img src={myPic} className={classes.pic} alt="A portrait of Avery Stahl"/>
           <Typography className={classes.content}>
               My name is Avery Stahl and I am a Full Stack Web Developer.
               I acquired my skills through the University of Central Florida Coding Bootcamp
@@ -44,9 +41,10 @@ function About () {
               <Divider className={classes.divider} />
               <Typography className={classes.content}>
               some other personal stuff about me like hobbies and whatnot
+               
               </Typography>
           </Typography>
-          <CardMedia className={classes.pic} image={myPic} alt="Portrait of Avery Stahl"/>
+          
           
         </div>
     );

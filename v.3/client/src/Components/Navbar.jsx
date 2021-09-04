@@ -27,16 +27,17 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   drawer: {
-    width: "15.4%",
+    width: "20rem",
     backgroundColor: "#7A2626",
+    marginRight: theme.spacing(2)
   },
   divider: {
     marginTop: "auto",
     marginBottom: "auto"
   },
   listItems: {
-    paddingTop: "36px",
-    paddingBottom: "36px",
+    paddingTop: "2.25rem",
+    paddingBottom: "2.25rem",
   },
   listText: {
     color: "#ECF4F9",
@@ -47,10 +48,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginLeft: "auto",
     marginRight: theme.spacing(2),
-    padding: "8px",
+    padding: ".5rem",
     color: "#ECF4F9",
     flexWrap: 'wrap',
-    fontSize: '2.1vmax',
+    fontSize: '2rem',
   },
   drawerTitle: {
     align:'center',
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
 // Main export
 function Navbar (props) {
   
-  // Utilize RRD history to display correct component with url
+  // Utilize React Router Dom history to display correct component with url
   const { history } = props;
   
   // Use imported inline styling
@@ -107,6 +108,7 @@ function Navbar (props) {
     },
   ]
 
+  // Drawer container
   const drawer = (
     <div className={classes.divider}>
       <Typography className={classes.drawerTitle}>
@@ -130,8 +132,8 @@ function Navbar (props) {
 
   return (
     <div className={classes.root}>
-      {/* MOBILE */}
-      <Hidden smUp implementation="js">
+      {/* DESKTOP */}
+      <Hidden mdUp implementation="js">
       <Appbar position="static" className={classes.navStyle}>
         <Toolbar>
           <IconButton
@@ -153,8 +155,8 @@ function Navbar (props) {
       </Appbar>
       </Hidden>
 
-      {/* DESKTOP */}
-      <Hidden xsDown implementation="js">
+      {/* MOBILE */}
+      <Hidden smDown implementation="js">
         <Drawer classes={{paper: classes.drawer}} variant="permanent" anchor="left">
           {drawer}
         </Drawer>
