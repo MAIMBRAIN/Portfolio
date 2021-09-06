@@ -10,10 +10,12 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   container: {
+    // Tablets+
     [theme.breakpoints.up('md')]: {
       marginTop:"2rem",
-      marginLeft:"22rem",
+      marginLeft:"20rem",
     },
+    // Phones
     [theme.breakpoints.down("sm")]: {
       margin:"2rem"
     }

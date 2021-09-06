@@ -15,6 +15,8 @@ import ForumIcon from '@material-ui/icons/ForumTwoTone';
 import { makeStyles, Typography, Toolbar, IconButton } from "@material-ui/core";
 import Appbar from "@material-ui/core/AppBar";
 
+import myPic from '../Images/MyPic.jpg'
+
 // MUI Styling
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,25 +28,6 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
-  drawer: {
-    width: "20rem",
-    backgroundColor: "#7A2626",
-    marginRight: theme.spacing(2)
-  },
-  divider: {
-    marginTop: "auto",
-    marginBottom: "auto"
-  },
-  listItems: {
-    paddingTop: "2.25rem",
-    paddingBottom: "2.25rem",
-  },
-  listText: {
-    color: "#ECF4F9",
-  },
-  listIcon: {
-    color: "#ECF4F9"
-  },
   title: {
     marginLeft: "auto",
     marginRight: theme.spacing(2),
@@ -53,10 +36,37 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     fontSize: '2rem',
   },
+  drawer: {
+    width: "18rem",
+    backgroundColor: "#7A2626",
+    marginRight: theme.spacing(2)
+  },
+  verticalCenter: {
+    marginTop: "auto",
+    marginBottom: "auto"
+  },
   drawerTitle: {
-    align:'center',
-    color: "blue"
-  }
+    textAlign: "center",
+    marginTop:"1rem",
+    marginBottom:"1rem",
+    color: "#ECF4F9"
+  },
+  pic: {
+    width:"10rem",
+    display: "block",
+    marginLeft:"auto",
+    marginRight:"auto",
+  },
+  listItems: {
+    marginTop: "2.25rem",
+    marginBottom: "2.25rem",
+  },
+  listText: {
+    color: "#ECF4F9",
+  },
+  listIcon: {
+    color: "#ECF4F9"
+  },
 }));
 
 // Main export
@@ -108,14 +118,22 @@ function Navbar (props) {
     },
   ]
 
-  // Drawer container
-  const drawer = (
-    <div className={classes.divider}>
+  // Drawer Title Box
+  const drawerTitle = (
+    <div className={classes.verticalCenter}>
       <Typography className={classes.drawerTitle}>
         Avery Stahl
-        \n Full Stack Web Developer
       </Typography>
-      <Divider className={classes.divider}/>
+      <img src={myPic} className={classes.pic} alt="A portrait of Avery Stahl"/>
+      <Typography className={classes.drawerTitle}>
+        Full Stack Web Developer
+      </Typography>
+    </div>
+  );
+  // Drawer container
+  const drawer = (
+    <div className={classes.verticalCenter}>
+      <Divider className={classes.verticalCenter}/>
       <List >
         {itemList.map((item, index) => {
           const { text, icon, urlClick } = item;
@@ -145,6 +163,7 @@ function Navbar (props) {
           >
             <MenuIcon />
             <Drawer classes={{paper: classes.drawer}} open={drawerOpen} ModalProps={{keepMounted:true}}>
+              {drawerTitle}
               {drawer}
             </Drawer>
           </IconButton>
@@ -158,6 +177,7 @@ function Navbar (props) {
       {/* MOBILE */}
       <Hidden smDown implementation="js">
         <Drawer classes={{paper: classes.drawer}} variant="permanent" anchor="left">
+          {drawerTitle}
           {drawer}
         </Drawer>
         <Appbar position="static" className={classes.navStyle}>

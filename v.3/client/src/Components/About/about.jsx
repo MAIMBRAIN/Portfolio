@@ -4,23 +4,35 @@ import myPic from "../../Images/MyPic.jpg"
 
 const useStyles = makeStyles(theme => ({
   container: {
-    // [theme.breakpoints.up('md')]: {
-    //   marginTop:"2rem",
-    //   marginLeft:"22rem",
-    // },
-    // [theme.breakpoints.down("sm")]: {
-    //   margin:"2rem"
-    // }
+    [theme.breakpoints.up('lg')]: {
+      display:"flex",
+      wrap:"wrap",
+      marginRight:"2rem"
+    }
   },
   content:{
-    fontSize: "1.25rem",
+    fontSize: "1.25rem"
   },
   divider:{
     margin: "1.1rem"
   },
   pic: {
+    alignSelf:"center",
+    width: "50%",
     marginRight: "1.3rem",
-    width: "25%",
+    [theme.breakpoints.down("md")]: {
+      width: "50%",
+      display: "block",
+      marginLeft: "auto",
+      marginRight:"auto",
+      marginBottom: "2rem"
+    },
+    [theme.breakpoints.down("sm")]: {
+      width:"75%",
+      display: "block",
+      marginLeft: "auto",
+      marginRight:"auto"
+    }
   }
 }))
 
