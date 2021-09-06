@@ -1,24 +1,31 @@
 import React from "react";
-import { CardMedia, Divider, makeStyles, Typography } from '@material-ui/core';
+import { Box, CardMedia, Divider, makeStyles, Typography } from '@material-ui/core';
 import myPic from "../../Images/MyPic.jpg"
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: "1"
+  },
   container: {
     [theme.breakpoints.up('lg')]: {
       display:"flex",
       wrap:"wrap",
-      marginRight:"2rem"
+      marginRight:"2rem",
     }
   },
   content:{
-    fontSize: "1.25rem"
+    fontSize: "1.25rem",
+    marginTop: "auto",
+    marginBottom: "auto",
   },
-  divider:{
-    margin: "1.1rem"
+  box:{
+    display:"flex",
+    flexWrap:"nowrap",
+    width:"100%"
   },
   pic: {
     alignSelf:"center",
-    width: "50%",
+    width: "25%",
     marginRight: "1.3rem",
     [theme.breakpoints.down("md")]: {
       width: "50%",
@@ -33,14 +40,17 @@ const useStyles = makeStyles(theme => ({
       marginLeft: "auto",
       marginRight:"auto"
     }
+  },
+  divider:{
+    margin: "1.1rem"
   }
 }))
 
 function About () {
-
     const classes = useStyles();
     return(
-        <div className={classes.container}>
+      <div className={classes.root}>
+        <div className={classes.container}>    
           <img src={myPic} className={classes.pic} alt="A portrait of Avery Stahl"/>
           <Typography className={classes.content}>
               My name is Avery Stahl and I am a Full Stack Web Developer.
@@ -50,15 +60,16 @@ function About () {
               and adapting to them. Within the three months in which I attended the coding bootcamp, I have
               gained a substantial amount of knowledge and the ability to apply the MERN Stack through small
               projects and building this website. 
-              <Divider className={classes.divider} />
-              <Typography className={classes.content}>
-              some other personal stuff about me like hobbies and whatnot
-               
-              </Typography>
           </Typography>
-          
-          
         </div>
+        <Divider className={classes.divider} />
+        <div className={classes.container}>  
+          <img src={myPic} className={classes.pic} alt="A portrait of Avery Stahl"/>
+          <Typography className={classes.content}>
+            some other personal stuff about me like hobbies and whatnot     
+          </Typography>
+        </div> 
+      </div>
     );
 };
 

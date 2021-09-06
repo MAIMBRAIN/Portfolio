@@ -39,11 +39,11 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     width: "18rem",
     backgroundColor: "#7A2626",
-    marginRight: theme.spacing(2)
+    marginRight: theme.spacing(2),
   },
-  verticalCenter: {
-    marginTop: "auto",
-    marginBottom: "auto"
+  drawerTitleBox: {
+    marginTop: "1rem",
+    marginBottom: "1rem"
   },
   drawerTitle: {
     textAlign: "center",
@@ -120,7 +120,7 @@ function Navbar (props) {
 
   // Drawer Title Box
   const drawerTitle = (
-    <div className={classes.verticalCenter}>
+    <div className={classes.drawerTitleBox}>
       <Typography className={classes.drawerTitle}>
         Avery Stahl
       </Typography>
@@ -130,10 +130,11 @@ function Navbar (props) {
       </Typography>
     </div>
   );
+
   // Drawer container
   const drawer = (
-    <div className={classes.verticalCenter}>
-      <Divider className={classes.verticalCenter}/>
+    <div>
+      <Divider/>
       <List >
         {itemList.map((item, index) => {
           const { text, icon, urlClick } = item;
@@ -145,6 +146,7 @@ function Navbar (props) {
           )
         })}
       </List>
+      <Divider/>
     </div>
   );
 
