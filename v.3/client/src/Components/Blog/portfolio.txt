@@ -1,0 +1,18 @@
+Challenges while building Portfolio
+
+This is a large test of what I learned over a year ago... I am relearning how to create a website
+but this one is the biggest project of them all. I will be embedding other react, javascript, and
+html projects into this mega react portfolio. I've been coming across quite a few bumps really
+trying to make sure it also looks good on mobile. Adjusting the previous projects will be one of
+the other things I have to do.
+
+Utilizing Yarn to manage the project --- do more reading on what it really does, similar to NPM
+Portfolio UI designed using Material UI
+React, React-Router-Dom
+
+Challenges
+Adjusting view for mobile vs desktop
+Spacing, directly affecting certain elements
+ - Moving the main content from being under the drawer on desktop
+ - Variable sizing for text - sometimes too big on mobile - learned when to use rem and %
+ - 

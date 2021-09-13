@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, CardMedia, Divider, makeStyles, Typography } from '@material-ui/core';
+import { Divider, makeStyles, Typography } from '@material-ui/core';
 import myPic from "../../Images/MyPic.jpg"
 
 const useStyles = makeStyles(theme => ({
@@ -17,11 +17,6 @@ const useStyles = makeStyles(theme => ({
     fontSize: "1.25rem",
     marginTop: "auto",
     marginBottom: "auto",
-  },
-  box:{
-    display:"flex",
-    flexWrap:"nowrap",
-    width:"100%"
   },
   pic: {
     alignSelf:"center",
