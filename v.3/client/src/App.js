@@ -1,41 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import './app.css';
-import Navbar from './Components/Navbar';
-import About from './Components/About/about';
-import Projects from './Components/Projects/projects';
-import Contact from './Components/Contact/contact';
-import Blog from './Components/Blog/blog';
-import { makeStyles } from '@material-ui/core';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-const useStyles = makeStyles(theme => ({
-  container: {
-    // Tablets+
-    [theme.breakpoints.up('md')]: {
-      marginTop:"2rem",
-      marginLeft:"20rem",
-    },
-    // Phones
-    [theme.breakpoints.down("sm")]: {
-      margin:"2rem"
-    }
-  }
-}))
+import './app.css';
+import Main from './Components/Main';
+import MemoryGame from './Components/Projects/MemoryGame/memorygame';
 
 function App() {
-  const classes = useStyles();
 
   return (
     <div className="App">
     <Router >
-      <Navbar />
       <Switch >
-      <div className={classes.container}>
-        <Route exact path="/" render={props => <About {...props}/>} />
-        <Route exact path="/projects" render={props => <Projects {...props}/>} />
-        <Route exact path="/blog" render={props => <Blog {...props}/>} />
-        <Route exact path="/contact" render={props => <Contact {...props}/>} />
-      </div>
+        <Route exact path={['/', '/projects', '/blog', '/contact']} render={props => <Main {...props}/>} />
+        <Route exact path='/projects/Memory_Game' render={props => <MemoryGame {...props}/>} />
       </Switch>
     </Router>
     </div>

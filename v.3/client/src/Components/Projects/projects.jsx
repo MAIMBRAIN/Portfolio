@@ -11,11 +11,12 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         marginRight: "1rem"
     },
-    // card: {
-    //     height: 360
-    // },
+    card: {
+        maxWidth: "40rem",
+    },
     media: {
-        height: 480
+        height: "10rem",
+        // width: "200px",
     },
     
 }))
