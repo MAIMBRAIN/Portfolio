@@ -1,0 +1,12 @@
+img{
+    width: 100px;
+    height: 100px;
+}
+
+a{
+    color: rgb(220, 220, 220)
+}
+
+a:hover {
+    color: rgb(180, 180, 180)
+}

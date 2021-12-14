@@ -1,0 +1,48 @@
+@font-face {
+  font-family: Ubuntu-Regular;
+  src: url("./fonts/Ubuntu/Ubuntu-Regular.ttf");
+}
+
+body, html{
+  background-color: rgb(235, 235, 235);
+  scroll-behavior: smooth;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+  font-family: "Ubuntu-Regular";
+}
+
+.navbar{
+  background-color: rgb(85, 85, 85)  !important;
+}
+
+.nav-link{
+  color: rgb(235, 235, 235);
+}
+
+.nav-link:hover{
+  color: rgb(200, 200, 200);
+}
+
+.card-body{
+  background-color: rgb(180, 180, 180);
+  border-radius: 3px;
+}
+
+.btn {
+  color: rgb(220, 220, 220) !important;
+  border-radius: 3px !important;
+}
+
+.repo-btn{
+  background-color: rgb(10, 120, 10) !important;
+}
+
+.project-btn{
+  background-color: rgb(20, 20, 200) !important;
+}
+
+footer{
+  background-color: rgb(85, 85, 85);
+  color: rgb(220, 220, 220)
+}
