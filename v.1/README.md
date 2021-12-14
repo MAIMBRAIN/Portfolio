@@ -1,4 +1,4 @@
 # Portfolio
- A place for my projects
+A place for my projects - The projects in here are not actual projects.
 
-Initially created in the UCF Coding Bootcamp for learning purposes. This is not my real portfolio. My real portfolio is located at averystahl.com
+This was initially created in the UCF Coding Bootcamp for learning purposes. This is not my real portfolio. My real portfolio is located at averystahl.com
