@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Card, CardActions, CardActionArea, CardContent, CardMedia, makeStyles, Typography } from '@material-ui/core';
 
-import MemoryGamePic from "../../Images/MemoryGame.jpg";
+import MemoryGamePic from "./MemoryGame.jpg";
 
 
 

@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawer: {
     width: "18rem",
-    backgroundColor: "#7A2626",
+    backgroundColor: "#540307",
     marginRight: theme.spacing(2),
   },
   drawerTitleBox: {
