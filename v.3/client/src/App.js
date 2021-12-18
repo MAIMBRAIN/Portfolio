@@ -9,7 +9,7 @@ function App() {
     <div className="App">
     <Router >
       <Switch >
-        <Route exact path={['/', '/projects', '/blog', '/contact']} render={props => <Main {...props}/>} />
+        <Route exact path={['/', '/projects', '/blog']} render={props => <Main {...props}/>} />
         <Route exact path='/projects/Memory_Game'/>
       </Switch>
     </Router>

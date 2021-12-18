@@ -21,6 +21,7 @@ import myPic from '../Images/MyPic.jpg'
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    paddingBottom:'6rem'
   },
   navStyle: {
     backgroundColor: "#303030",
@@ -111,11 +112,6 @@ function Navbar (props) {
       icon: <BookIcon/>,
       urlClick: () => history.push("/blog")
     },
-    {
-      text: "Contact",
-      icon: <ForumIcon/>,
-      urlClick: () => history.push("/contact")
-    },
   ]
 
   // Drawer Title Box
@@ -154,7 +150,7 @@ function Navbar (props) {
     <div className={classes.root}>
       {/* DESKTOP */}
       <Hidden mdUp implementation="js">
-      <Appbar position="static" className={classes.navStyle}>
+      <Appbar className={classes.navStyle}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -182,7 +178,7 @@ function Navbar (props) {
           {drawerTitle}
           {drawer}
         </Drawer>
-        <Appbar position="static" className={classes.navStyle}>
+        <Appbar className={classes.navStyle}>
           <Typography variant="h4" className={classes.title}>
             Avery Stahl's Portfolio
           </Typography>

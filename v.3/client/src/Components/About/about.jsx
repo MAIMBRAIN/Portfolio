@@ -1,6 +1,10 @@
 import React from "react";
-import { Divider, makeStyles, Typography } from '@material-ui/core';
+import { Divider, makeStyles, Typography, Box, Grid } from '@material-ui/core';
 import myPic from "../../Images/MyPic.jpg"
+import GitHub from './github.svg';
+import LinkedIn from './linkedin.svg';
+import Mail from './mail.svg';
+import Phone from './phone.svg';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -59,10 +63,31 @@ function About () {
         </div>
         <Divider className={classes.divider} />
         <div className={classes.container}>  
-          <img src={myPic} className={classes.pic} alt="A portrait of Avery Stahl"/>
-          <Typography className={classes.content}>
-            some other personal stuff about me like hobbies and whatnot     
-          </Typography>
+          <Box>
+            <Grid container className={classes.Grid}>
+                <Grid item className={classes.GridItems}>
+                    <a href="https://www.github.com/maimbrain" rel="noopener">
+                        <img src={GitHub} alt="github.com/maimbrain" className={classes.Icon} />
+                    </a>
+                </Grid>
+                <Grid item className={classes.GridItems}>
+                    <a href="https://www.linkedin.com/in/avery-stahl-916373143/" >
+                        <img src={LinkedIn} alt="https://www.linkedin.com/in/avery-stahl-916373143/" className={classes.Icon} />
+                    </a>
+                </Grid>
+                <Grid item className={classes.GridItems}>
+                    <a href="mailto:averystahl@hotmail.com">
+                        <img src={Mail} alt="averystahl@hotmail.com" className={classes.Icon}/>
+                    </a>
+                </Grid>
+                <Grid item className={classes.GridItems}>
+                    <a href="tel:321-693-3994">
+                        <img src={Phone} alt="(321)693-3994" className={classes.Icon}/>
+                    </a>
+                    
+                </Grid>
+            </Grid>
+          </Box>
         </div> 
       </div>
     );
