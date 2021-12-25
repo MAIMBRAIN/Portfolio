@@ -11,7 +11,6 @@ import AccountBox from "@material-ui/icons/AccountBoxTwoTone";
 import MenuIcon from "@material-ui/icons/Menu";
 import BuildIcon from '@material-ui/icons/BuildTwoTone';
 import BookIcon from '@material-ui/icons/BookTwoTone';
-import ForumIcon from '@material-ui/icons/ForumTwoTone';
 import { makeStyles, Typography, Toolbar, IconButton } from "@material-ui/core";
 import Appbar from "@material-ui/core/AppBar";
 
@@ -21,6 +20,7 @@ import myPic from '../Images/MyPic.jpg'
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    paddingBottom:'6rem'
   },
   navStyle: {
     backgroundColor: "#303030",
@@ -38,8 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawer: {
     width: "18rem",
-    backgroundColor: "#7A2626",
-    marginRight: theme.spacing(2),
+    backgroundColor: "#540307",
   },
   drawerTitleBox: {
     marginTop: "1rem",
@@ -111,11 +110,6 @@ function Navbar (props) {
       icon: <BookIcon/>,
       urlClick: () => history.push("/blog")
     },
-    {
-      text: "Contact",
-      icon: <ForumIcon/>,
-      urlClick: () => history.push("/contact")
-    },
   ]
 
   // Drawer Title Box
@@ -154,7 +148,7 @@ function Navbar (props) {
     <div className={classes.root}>
       {/* DESKTOP */}
       <Hidden mdUp implementation="js">
-      <Appbar position="static" className={classes.navStyle}>
+      <Appbar className={classes.navStyle}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -182,7 +176,7 @@ function Navbar (props) {
           {drawerTitle}
           {drawer}
         </Drawer>
-        <Appbar position="static" className={classes.navStyle}>
+        <Appbar className={classes.navStyle}>
           <Typography variant="h4" className={classes.title}>
             Avery Stahl's Portfolio
           </Typography>
