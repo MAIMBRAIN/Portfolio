@@ -14,11 +14,12 @@ const useStyles = makeStyles(theme => ({
       // Tablets+
       [theme.breakpoints.up('md')]: {
         marginTop:"2rem",
-        marginLeft:"20rem",
+        marginLeft:"21rem",
+        marginRight:'3rem'
       },
       // Phones
       [theme.breakpoints.down("sm")]: {
-        margin:"2rem"
+        margin:"2.5rem"
       }
     }
   }))
