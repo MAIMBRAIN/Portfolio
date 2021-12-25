@@ -13,7 +13,6 @@ const useStyles = makeStyles(theme => ({
     container: {
       // Tablets+
       [theme.breakpoints.up('md')]: {
-        marginTop:"2rem",
         marginLeft:"21rem",
         marginRight:'3rem'
       },
