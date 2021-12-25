@@ -27,7 +27,7 @@ function Main(props) {
     const classes = useStyles();
 
     return (
-        <div>
+        <div className={classes.root}>
             <Navbar/>
             <Switch>
                 <div className={classes.container}> 

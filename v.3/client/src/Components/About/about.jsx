@@ -7,13 +7,9 @@ import Mail from './mail.svg';
 import Phone from './phone.svg';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: "1"
-  },
-  container: {
+  about: {
     [theme.breakpoints.up('lg')]: {
       display:"flex",
-      wrap:"wrap",
       marginRight:"2rem",
     }
   },
@@ -25,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   pic: {
     alignSelf:"center",
     width: "25%",
-    marginRight: "1.3rem",
+    marginRight: "1.2rem",
     [theme.breakpoints.down("md")]: {
       width: "50%",
       display: "block",
@@ -42,14 +38,71 @@ const useStyles = makeStyles(theme => ({
   },
   divider:{
     margin: "1.1rem"
-  }
+  },
+  icon:{
+    width:'10rem',
+  },
+  iconText:{
+    marginTop:'1rem',
+    textAlign: 'center'
+  },
+  gridItems:{
+    alignSelf:'center',
+  },
+  grid:{
+    justifyContent: 'space-evenly',
+  },
 }))
 
 function About () {
     const classes = useStyles();
+
+    const contactMeList = [
+      {
+        text: "GitHub",
+        icon: GitHub,
+        url: "https://www.github.com/maimbrain"
+      },
+      {
+        text: "LinkedIn",
+        icon: LinkedIn,
+        url: "https://www.linkedin.com/in/avery-stahl-916373143/"
+      },
+      {
+        text: "E-mail",
+        icon: Mail,
+        url: "mailto:averystahl@hotmail.com"
+      },
+      {
+        text: "Phone Number",
+        icon: Phone,
+        url: "tel:321-693-3994"
+      },
+    ];
+    
+    const contactSection = (
+      <div>  
+        <Box>
+          <Grid container spacing={10} className={classes.grid}>
+              {contactMeList.map((item, index) => {
+                const {text, icon, url} = item;
+                return(
+                  <Grid item className={classes.gridItems}>
+                    <a href={url} rel="noopener">
+                        <img src={icon} alt={url} className={classes.icon} />
+                    </a>
+                    <Typography className={classes.iconText}>{text}</Typography>
+                  </Grid>
+                )
+              })}
+          </Grid>
+        </Box>
+      </div> 
+    );
+
     return(
-      <div className={classes.root}>
-        <div className={classes.container}>    
+      <div>
+        <div className={classes.about}>    
           <img src={myPic} className={classes.pic} alt="A portrait of Avery Stahl"/>
           <Typography className={classes.content}>
               My name is Avery Stahl and I am a Full Stack Web Developer.
@@ -62,33 +115,7 @@ function About () {
           </Typography>
         </div>
         <Divider className={classes.divider} />
-        <div className={classes.container}>  
-          <Box>
-            <Grid container className={classes.Grid}>
-                <Grid item className={classes.GridItems}>
-                    <a href="https://www.github.com/maimbrain" rel="noopener">
-                        <img src={GitHub} alt="github.com/maimbrain" className={classes.Icon} />
-                    </a>
-                </Grid>
-                <Grid item className={classes.GridItems}>
-                    <a href="https://www.linkedin.com/in/avery-stahl-916373143/" >
-                        <img src={LinkedIn} alt="https://www.linkedin.com/in/avery-stahl-916373143/" className={classes.Icon} />
-                    </a>
-                </Grid>
-                <Grid item className={classes.GridItems}>
-                    <a href="mailto:averystahl@hotmail.com">
-                        <img src={Mail} alt="averystahl@hotmail.com" className={classes.Icon}/>
-                    </a>
-                </Grid>
-                <Grid item className={classes.GridItems}>
-                    <a href="tel:321-693-3994">
-                        <img src={Phone} alt="(321)693-3994" className={classes.Icon}/>
-                    </a>
-                    
-                </Grid>
-            </Grid>
-          </Box>
-        </div> 
+        {contactSection}
       </div>
     );
 };
