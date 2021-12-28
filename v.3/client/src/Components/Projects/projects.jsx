@@ -1,23 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Card, CardActions, CardActionArea, CardContent, CardMedia, makeStyles, Typography, Grid } from '@material-ui/core';
+import { Button, Card, CardActions, CardActionArea, CardContent, CardMedia, makeStyles, Typography, Grid, Box } from '@material-ui/core';
 
-import MemoryGamePic from "./MemoryGame.jpg";
+import MemoryGamePic from "./images/MemoryGame.jpg";
+import V1_Pic from './images/V1.png';
+import V2_Pic from './images/V2.png';
 
 
 const useStyles = makeStyles(theme => ({
     root: {
         display: "flex",
-        marginRight: "1rem"
+        justifyContent:'center',
+        marginTop: '2.4rem'
+    },
+    grid:{
+        justifyContent:'center',
+    },
+    gridItem: {
+        marginRight: '2rem'
     },
     card: {
-        maxWidth: '30rem',
         marginBottom: '2rem',
         backgroundColor: '#303030',
+        
+        [theme.breakpoints.up('lg')]:{
+            maxWidth: '30rem',
+        },
+        [theme.breakpoints.down('lg')]:{
+            maxWidth: '24rem',
+            marginBottom:'10rem'
+        }
     },
     cardPic: {
-        height: "20rem",
-        // width: "200px",
+        [theme.breakpoints.up('lg')]:{
+            height: "20rem",
+        },
+        [theme.breakpoints.down('lg')]:{
+            height: "14rem",
+        }
+        
     },
     cardText: {
         color: "#ECF4F9"
@@ -33,7 +54,7 @@ function Projects ({match}) {
         {
             title:"Memory Game",
             image: MemoryGamePic,
-            description: "Test your memory by selecting each Pokémon once! Be careful though, every selection shuffles them around. Good Luck",
+            description: "Test your memory by selecting each Pokémon once! Be careful though, every selection shuffles them around. Good Luck!",
             gitURL: "https://github.com/MAIMBRAIN/Clicky-Game",
             viewURL: `${match.url + "/memory_game"}`
         },
@@ -43,45 +64,61 @@ function Projects ({match}) {
             description: "Having trouble keeping up on your monthly subscriptions and how much you owe? Try out this finance calculator!",
             gitURL: "https://github.com/MAIMBRAIN/RedeFinance",
             viewURL: `${match.url + "/redefinance"}`
+        },
+        {
+            title:"Portfolio V2",
+            image: V2_Pic,
+            description: "This is the first version I created to display on this domain. I wish I finished it but I'll explain later... Go back in time ->",
+            gitURL: "https://github.com/MAIMBRAIN/Clicky-Game",
+            viewURL: `${match.url + "/V2"}`
+        },
+        {
+            title:"Portfolio V1",
+            image: V1_Pic,
+            description: "A very basic layout of what could be a portfolio. This doesn't actually contain any real projects and are just placeholders",
+            gitURL: "https://github.com/MAIMBRAIN/RedeFinance",
+            viewURL: `${match.url + "/V1"}`
         }
     ];
 
     const projects = (
         <div>
-            <Grid container>
-            {projectList.map((item, index) => {
-                const {title, image, description, gitURL, viewURL} = item;
-                return(
-                    <Grid item xs={12}>
-                        <Card className={classes.card}>
-                            <CardActionArea>
-                                <CardMedia
-                                className={classes.cardPic}
-                                image={image}
-                                title={title}
-                                />
-                                <CardContent className={classes.cardText}>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    {title}
-                                </Typography>
-                                <Typography variant="body2" component="p">
-                                    {description}
-                                </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                            <CardActions className={classes.cardText}>
-                                <Button size="small">
-                                    <Link to={{pathname: gitURL}} target="_blank" rel="noreferrer noopener" className={classes.cardText}> View Source Code on GitHub! </Link>
-                                </Button>
-                                <Button size="small">
-                                    <Link to={viewURL} target="_blank" rel="noreferrer noopener" className={classes.cardText}> See More in a New Tab! </Link>
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                )
-            })}
-            </Grid>
+            <Box>
+                <Grid container className={classes.grid}>
+                {projectList.map((item, index) => {
+                    const {title, image, description, gitURL, viewURL} = item;
+                    return(
+                        <Grid item className={classes.gridItem} id={index}>
+                            <Card className={classes.card}>
+                                <CardActionArea>
+                                    <CardMedia
+                                    className={classes.cardPic}
+                                    image={image}
+                                    title={title}
+                                    />
+                                    <CardContent className={classes.cardText}>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        {title}
+                                    </Typography>
+                                    <Typography variant="body2" component="p">
+                                        {description}
+                                    </Typography>
+                                    </CardContent>
+                                </CardActionArea>
+                                <CardActions className={classes.cardText}>
+                                    <Button size="small">
+                                        <Link to={{pathname: gitURL}} target="_blank" rel="noreferrer noopener" className={classes.cardText}> View Source Code on GitHub! </Link>
+                                    </Button>
+                                    <Button size="small">
+                                        <Link to={viewURL} target="_blank" rel="noreferrer noopener" className={classes.cardText}> See More in a New Tab! </Link>
+                                    </Button>
+                                </CardActions>
+                            </Card>
+                        </Grid>
+                    )
+                })}
+                </Grid>
+            </Box>
         </div>
     );
 
