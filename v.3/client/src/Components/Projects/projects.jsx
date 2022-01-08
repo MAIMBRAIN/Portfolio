@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button, Card, CardActions, CardActionArea, CardContent, CardMedia, makeStyles, Typography, Grid, Box } from '@material-ui/core';
 
 import MemoryGamePic from "./images/MemoryGame.jpg";
+import WeatherAppPic from "./images/WeatherApp.png"
 import V1_Pic from './images/V1.png';
 import V2_Pic from './images/V2.png';
 
@@ -57,6 +58,13 @@ function Projects ({match}) {
             description: "Test your memory by selecting each Pokémon once! Be careful though, every selection shuffles them around. Good Luck!",
             gitURL: "https://github.com/MAIMBRAIN/Clicky-Game",
             viewURL: `${match.url + "/memory_game"}`
+        },
+        {
+            title:"Weather App",
+            image: WeatherAppPic,
+            description: "Gee, I wonder what the weather is like. Gotta dress correctly today. Don't wanna walk out with shorts on in a blizzard. Get your local forecast!",
+            gitURL: "https://github.com/MAIMBRAIN/Weather-App",
+            viewURL: `${match.url + "/weather_app"}`
         },
         {
             title:"RedeFinance",
