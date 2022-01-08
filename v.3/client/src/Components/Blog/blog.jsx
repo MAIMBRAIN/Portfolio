@@ -4,7 +4,7 @@ function Blog () {
 
     return(
         <div>
-            <p>This is the Blog page</p>
+            <p>No posts yet, but I'll have some up soon!</p>
         </div>
     );
 };

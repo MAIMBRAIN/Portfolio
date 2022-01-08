@@ -1,11 +1,11 @@
 import React from "react";
 import { Divider, makeStyles, Typography, Box, Grid } from '@material-ui/core';
 import myPic from "../../Images/MyPic.jpg"
-import GitHub from './github.svg';
-import LinkedIn from './linkedin.svg';
-import Mail from './mail.svg';
-import Phone from './phone.svg';
-import ResumeIcon from './resume.svg';
+import GitHub from './images/github.svg';
+import LinkedIn from './images/linkedin.svg';
+import Mail from './images/mail.svg';
+import Phone from './images/phone.svg';
+import ResumeIcon from './images/resume.svg';
 import Resume from '../../Images/Resume.pdf'
 
 const useStyles = makeStyles(theme => ({

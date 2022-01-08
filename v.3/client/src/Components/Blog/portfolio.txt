@@ -8,7 +8,7 @@ the other things I have to do.
 
 Utilizing Yarn to manage the project --- do more reading on what it really does, similar to NPM
 Portfolio UI designed using Material UI
-React, React-Router-Dom
+React, React-Router-Dom, MySQL
 
 Challenges:
 Adjusting view for mobile vs desktop
@@ -19,4 +19,7 @@ Spacing, directly affecting certain elements
 
 Allowing the project UI to render without porfolio UI interfering
 
-
+How hosting different projects on the same website works.
+Your files stored in the publicHTML folder act as a home directory to the main domain. If you bought the domain example.com and threw in a bunch of random files in that same folder,
+you could access those files by the url. If you added img.png to the publicHTML directory, you could access it as example.com/img.png without telling it how to access that.
+Accessing files like this definitely doesn't sound very secure if you're storing files under your domain.
